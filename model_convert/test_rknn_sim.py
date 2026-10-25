@@ -9,7 +9,7 @@ rknn = RKNN()
 # 2. 加载刚生成的 RK3576 模型
 RKNN_MODEL = 'yolo11n_rk3576_int8.rknn'
 print(f"--> 加载模型: {RKNN_MODEL}")
-ret = rknn.load_rknn(RKNN_MODEL)
+ret = rknn.load_rknn(RKNN_MODEL) #如果你调用了 load_rknn()：RKNN Toolkit2 认为你是要通过 USB/ADB 连接真实的开发板（调用板端驱动）跑推理。
 if ret != 0:
     print("❌ 加载 RKNN 失败！")
     exit(ret)

@@ -8,7 +8,7 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 # 拼接为绝对路径，彻底避免工作路径偏差
 ONNX_MODEL = os.path.join(CURRENT_DIR, 'yolo11n.onnx')
 RKNN_MODEL = os.path.join(CURRENT_DIR, 'yolo11n_rk3576_int8.rknn')
-CALIB_DATASET = os.path.join(CURRENT_DIR, 'dataset.txt')
+CALIB_DATASET = os.path.join(CURRENT_DIR, 'dataset','dataset.txt')
 TARGET_PLATFORM = 'rk3576'
 # ==========================================
 
@@ -39,7 +39,7 @@ def convert():
 
     # 4. 构建并量化模型（生成针对 RK3576 NPU 的指令流）
     print('--> 正在构建 RKNN 模型 (执行 INT8 非对称量化)...')
-    ret = rknn.build(do_quantization=True, dataset=CALIB_DATASET)
+    ret = rknn.build(do_quantization=True, dataset=CALIB_DATASET) 
     if ret != 0:
         print('❌ 构建 RKNN 失败！')
         sys.exit(ret)

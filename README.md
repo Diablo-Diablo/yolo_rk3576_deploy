@@ -58,19 +58,11 @@
 │       └── yolo11n_teeth_rk3576_int8.rknn
 ├── convert/                       # 主机端交叉编译与量化脚本
 │   ├── convert_yolo11.py          # ONNX -> RKNN 转换与 INT8 量化主程序
-│   └── verify_simulation.py       # x86 主机端 RKNN 仿真验证脚本
+│   └── test_sim_forward.py       # x86 主机端 RKNN 仿真验证脚本
 ├── board/                         # 板端 C++ / Python 推理与部署代码
 │   ├── include/                   # 瑞芯微 rknn_api / rga 头文件
 │   ├── src/                       # 后处理 (DFL 解码、NMS) 与硬件拉流代码
 │   └── test_rknn_board.py         # 板端快速联调原型脚本
 └── docs/                          # 实验记录与部署技术文档
+```
 
-
-### 💡 工程流程梳理（周六上板前你的全景脑图）：
-
-到目前为止，你的工程流水线已经走到第 4 步（80% 进度）：
-1. ✅ **环境与交叉工具链**：WSL2 + Python 3.10 + RKNN-Toolkit2 (2.3.2)
-2. ✅ **基线浮点模型准备**：YOLOv11n ONNX (Opset 12)
-3. ✅ **NPU 图优化与 INT8 量化编译**：顺利产出 `yolo11n_rk3576_int8.rknn`
-4. ✅ **张量协议打通**：明确输出为 `(1, 84, 8400)`，锁定后处理逻辑
-5. ⏳ **周六板端执行**：把 `.rknn` 拷到板子上，调用 `rknpu2` / `rknn-toolkit-lite2` 加载执行，测延迟与精度！
