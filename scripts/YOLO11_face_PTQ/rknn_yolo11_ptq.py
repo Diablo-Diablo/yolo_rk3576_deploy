@@ -15,7 +15,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Convert a YOLO11 ONNX detector to RK3576 RKNN (FP16 or INT8)."
     )
-    parser.add_argument("--onnx", required=False, type=Path, help="Exact ONNX model to convert", default=Path(__file__).parent.parent.parent / "models" / "yolov11n" / "yolo_face" / "yolo11n_face.onnx")
+    parser.add_argument("--onnx", required=False, type=Path, help="Exact ONNX model to convert", default=Path(__file__).parent.parent.parent / "models" / "yolov11n" / "yolo_face" / "yolo11n_face_split.onnx")
     parser.add_argument("--mode", required=False, choices=("fp16", "int8"),default="int8", help="Quantization mode: fp16 or int8")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--calibration-list", type=Path, default=DEFAULT_CALIBRATION_LIST)
@@ -70,7 +70,7 @@ def main() -> int:
         }
         if args.mode == "int8":
             config_kwargs["quantized_dtype"] = "w8a8"
-            config_kwargs["quantized_algorithm"] = "kl_divergence"
+            config_kwargs["quantized_algorithm"] = "normal"
         ret = rknn.config(**config_kwargs)
         if ret != 0:
             raise RuntimeError(f"RKNN config failed with code {ret}")

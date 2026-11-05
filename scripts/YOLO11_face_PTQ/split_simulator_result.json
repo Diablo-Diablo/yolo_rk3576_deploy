@@ -1,0 +1,60 @@
+{
+  "image": "/mnt/d/yolo_rk3576_deploy/scripts/YOLO11_face_PTQ/rknn_calib_1000/wider_val_0000.jpg",
+  "calibration_images": 1000,
+  "source_onnx": "/mnt/d/yolo_rk3576_deploy/models/yolov11n/yolo_face/yolo11n_face_split.onnx",
+  "backend": "PC simulator",
+  "onnx": [
+    {
+      "shape": [
+        1,
+        4,
+        8400
+      ],
+      "dtype": "float32",
+      "minimum": 1.893404483795166,
+      "maximum": 638.0191040039062
+    },
+    {
+      "shape": [
+        1,
+        1,
+        8400
+      ],
+      "dtype": "float32",
+      "minimum": 0.0,
+      "maximum": 0.8111753463745117
+    }
+  ],
+  "onnx_scores": {
+    "maximum": 0.8111753463745117,
+    "nonzero": 6501,
+    "above025": 114
+  },
+  "simulated_int8": [
+    {
+      "shape": [
+        1,
+        4,
+        8400
+      ],
+      "dtype": "float32",
+      "minimum": 0.0,
+      "maximum": 638.3665161132812
+    },
+    {
+      "shape": [
+        1,
+        1,
+        8400
+      ],
+      "dtype": "float32",
+      "minimum": 0.0,
+      "maximum": 0.8370391726493835
+    }
+  ],
+  "simulated_int8_scores": {
+    "maximum": 0.8370391726493835,
+    "nonzero": 318,
+    "above025": 118
+  }
+}
