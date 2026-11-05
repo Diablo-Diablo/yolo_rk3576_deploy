@@ -4,11 +4,11 @@ from rknn.api import RKNN
 
 # ================= 配置区 =================
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-PARENT_DIR = os.path.dirname(CURRENT_DIR)
+PARENT_DIR = os.path.dirname(os.path.dirname(CURRENT_DIR))
 
 # 拼接为绝对路径，彻底避免工作路径偏差
-ONNX_MODEL = os.path.join(PARENT_DIR, 'models', 'onnx' , 'yolo11n.onnx')
-RKNN_MODEL = os.path.join(CURRENT_DIR, 'yolo11n_rk3576_fp16.rknn')
+ONNX_MODEL = os.path.join(PARENT_DIR, 'models','yolov11n', 'yolo_face' , 'yolo11n_face.onnx')
+RKNN_MODEL = os.path.join(CURRENT_DIR, 'yolo11n_face_fp16.rknn')
 CALIB_DATASET = os.path.join(CURRENT_DIR, 'dataset','dataset.txt')
 TARGET_PLATFORM = 'rk3576'
 

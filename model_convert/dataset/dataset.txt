@@ -1,1 +1,0 @@
-/mnt/d/yolo_rk3576_deploy/model_convert/dataset/bus.jpg

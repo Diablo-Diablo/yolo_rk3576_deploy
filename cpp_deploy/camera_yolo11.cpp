@@ -13,7 +13,7 @@
 #include "rknn_api.h"
 
 // ================= 配置区 =================
-const char* MODEL_PATH = "/home/industio/yolo_test/yolo11n_rk3576_fp16.rknn";
+const char* MODEL_PATH = "/home/industio/yolo_test/yolo11n_face_fp16.rknn";
 const char* CAMERA_DEV = "/dev/video42";
 const int CAM_WIDTH = 1920;
 const int CAM_HEIGHT = 1080;

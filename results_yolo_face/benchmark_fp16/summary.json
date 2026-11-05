@@ -1,0 +1,33 @@
+{
+  "model": "/home/industio/yolo_test/yolo11n_face_fp16.rknn",
+  "dataset": "/home/industio/yolo_test/fddb_yolo",
+  "split": "val",
+  "images": 567,
+  "ground_truth_boxes": 1054,
+  "confidence_threshold": 0.25,
+  "nms_iou_threshold": 0.45,
+  "metric_precision_recall_iou": 0.5,
+  "TP": 988,
+  "FP": 120,
+  "FN": 66,
+  "precision": 0.8916967509025271,
+  "recall": 0.937381404174573,
+  "mAP50": 0.9316955930639637,
+  "mAP50_90": 0.44436394527555056,
+  "AP_by_IoU": {
+    "AP0.50": 0.9316955930639637,
+    "AP0.55": 0.9055725519196116,
+    "AP0.60": 0.8395567507184782,
+    "AP0.65": 0.6992251947710071,
+    "AP0.70": 0.4578235914011138,
+    "AP0.75": 0.147906452127778,
+    "AP0.80": 0.016754481566979763,
+    "AP0.85": 0.0007244808127539661,
+    "AP0.90": 1.6411098268675345e-05
+  },
+  "detections_total": 1108,
+  "confidence_mean": 0.8050237569228682,
+  "inference_ms_mean": 51.76480659083545,
+  "inference_ms_median": 51.874171999770624,
+  "inference_ms_p95": 58.17638460002854
+}
