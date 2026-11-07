@@ -1,0 +1,20 @@
+{
+  "model": "/mnt/d/yolo_rk3576_deploy/models/insightface/w600k_mbf.onnx",
+  "identities": {},
+  "images": 50,
+  "same_identity": {
+    "count": 0
+  },
+  "different_identity": {
+    "count": 0
+  },
+  "mode": "unlabeled",
+  "embedding_shape": [
+    50,
+    512
+  ],
+  "embedding_norm_min": 0.9999998807907104,
+  "embedding_norm_max": 1.0,
+  "preprocessing": "RGB, resize112, (pixel-127.5)/128, L2 output",
+  "note": "Descriptive small-sample baseline, not accuracy or FAR. Pairs are correlated; no automatic decision threshold."
+}

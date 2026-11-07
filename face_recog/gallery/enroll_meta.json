@@ -1,0 +1,13 @@
+{
+  "crops": 15,
+  "sampled_frames": 15,
+  "skipped_slots": 0,
+  "camera": {
+    "width": 640.0,
+    "height": 480.0,
+    "fps": 30.0
+  },
+  "output": "D:\\yolo_rk3576_deploy\\face_recog\\gallery\\owner.npy",
+  "audit_embeddings": "D:\\yolo_rk3576_deploy\\face_recog\\gallery\\enroll_embeddings.npy",
+  "note": "Reference is the L2-normalised mean of all per-crop embeddings."
+}

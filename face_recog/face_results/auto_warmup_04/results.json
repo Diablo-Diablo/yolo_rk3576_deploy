@@ -1,0 +1,244 @@
+{
+  "target_frames": 15,
+  "sampled_frames": 15,
+  "skipped_sample_slots": 0,
+  "cached_faces": 15,
+  "camera": {
+    "width": 640.0,
+    "height": 480.0,
+    "fps": 30.0
+  },
+  "capture_seconds": 2.878111700003501,
+  "recognition_phase_ms": 156.8085000035353,
+  "timing_note": "Recognition phase includes crop file writes; excludes model load and final report writes",
+  "reference": "D:\\yolo_rk3576_deploy\\face_recog\\gallery\\owner.npy",
+  "threshold": 0.5,
+  "results": [
+    {
+      "crop": "face_0000.png",
+      "sampled_frame": 1,
+      "capture_seconds": 0.029231499996967614,
+      "box_xyxy": [
+        293.8777160644531,
+        197.5902557373047,
+        511.3656311035156,
+        426.0046691894531
+      ],
+      "detection_confidence": 0.7972596287727356,
+      "cosine": 0.595775842666626,
+      "match": true,
+      "embedding_compare_ms": 7.887100044172257
+    },
+    {
+      "crop": "face_0001.png",
+      "sampled_frame": 2,
+      "capture_seconds": 0.22228320001158863,
+      "box_xyxy": [
+        289.8477783203125,
+        197.14256286621094,
+        506.033447265625,
+        425.57354736328125
+      ],
+      "detection_confidence": 0.7898027300834656,
+      "cosine": 0.6249839663505554,
+      "match": true,
+      "embedding_compare_ms": 7.097100024111569
+    },
+    {
+      "crop": "face_0002.png",
+      "sampled_frame": 3,
+      "capture_seconds": 0.42989420000230893,
+      "box_xyxy": [
+        289.86773681640625,
+        212.17080688476562,
+        504.54266357421875,
+        427.7998352050781
+      ],
+      "detection_confidence": 0.7917062044143677,
+      "cosine": 0.3768860995769501,
+      "match": false,
+      "embedding_compare_ms": 6.8419999442994595
+    },
+    {
+      "crop": "face_0003.png",
+      "sampled_frame": 4,
+      "capture_seconds": 0.621115899994038,
+      "box_xyxy": [
+        291.953857421875,
+        212.58416748046875,
+        502.5723876953125,
+        425.19671630859375
+      ],
+      "detection_confidence": 0.7894575595855713,
+      "cosine": 0.396065354347229,
+      "match": false,
+      "embedding_compare_ms": 6.54430000577122
+    },
+    {
+      "crop": "face_0004.png",
+      "sampled_frame": 5,
+      "capture_seconds": 0.8281913000391796,
+      "box_xyxy": [
+        293.626220703125,
+        180.3442840576172,
+        500.18499755859375,
+        421.3268737792969
+      ],
+      "detection_confidence": 0.8000832796096802,
+      "cosine": 0.7514885663986206,
+      "match": true,
+      "embedding_compare_ms": 6.477099959738553
+    },
+    {
+      "crop": "face_0005.png",
+      "sampled_frame": 6,
+      "capture_seconds": 1.0219266000203788,
+      "box_xyxy": [
+        290.61895751953125,
+        176.93862915039062,
+        499.562744140625,
+        419.57293701171875
+      ],
+      "detection_confidence": 0.7967933416366577,
+      "cosine": 0.7753658294677734,
+      "match": true,
+      "embedding_compare_ms": 6.69389998074621
+    },
+    {
+      "crop": "face_0006.png",
+      "sampled_frame": 7,
+      "capture_seconds": 1.2279789000167511,
+      "box_xyxy": [
+        288.13116455078125,
+        168.90545654296875,
+        496.21563720703125,
+        420.2926940917969
+      ],
+      "detection_confidence": 0.814165472984314,
+      "cosine": 0.7870661020278931,
+      "match": true,
+      "embedding_compare_ms": 6.677900033537298
+    },
+    {
+      "crop": "face_0007.png",
+      "sampled_frame": 8,
+      "capture_seconds": 1.42126900004223,
+      "box_xyxy": [
+        291.84222412109375,
+        173.29248046875,
+        497.52130126953125,
+        419.5438232421875
+      ],
+      "detection_confidence": 0.8179609179496765,
+      "cosine": 0.795087456703186,
+      "match": true,
+      "embedding_compare_ms": 6.426000036299229
+    },
+    {
+      "crop": "face_0008.png",
+      "sampled_frame": 9,
+      "capture_seconds": 1.627661500009708,
+      "box_xyxy": [
+        287.1346435546875,
+        178.3695831298828,
+        497.07470703125,
+        417.8925476074219
+      ],
+      "detection_confidence": 0.7973332405090332,
+      "cosine": 0.7403466701507568,
+      "match": true,
+      "embedding_compare_ms": 6.906599970534444
+    },
+    {
+      "crop": "face_0009.png",
+      "sampled_frame": 10,
+      "capture_seconds": 1.8217522000195459,
+      "box_xyxy": [
+        261.306640625,
+        199.9456329345703,
+        498.8685302734375,
+        383.02685546875
+      ],
+      "detection_confidence": 0.7069266438484192,
+      "cosine": 0.35245782136917114,
+      "match": false,
+      "embedding_compare_ms": 6.661299965344369
+    },
+    {
+      "crop": "face_0010.png",
+      "sampled_frame": 11,
+      "capture_seconds": 2.0290116000105627,
+      "box_xyxy": [
+        261.313232421875,
+        135.82456970214844,
+        474.9915771484375,
+        382.3564453125
+      ],
+      "detection_confidence": 0.7409608364105225,
+      "cosine": 0.7646359205245972,
+      "match": true,
+      "embedding_compare_ms": 6.752600020263344
+    },
+    {
+      "crop": "face_0011.png",
+      "sampled_frame": 12,
+      "capture_seconds": 2.221894300018903,
+      "box_xyxy": [
+        267.4885559082031,
+        138.70925903320312,
+        463.9365539550781,
+        384.7845153808594
+      ],
+      "detection_confidence": 0.8238040804862976,
+      "cosine": 0.8653390407562256,
+      "match": true,
+      "embedding_compare_ms": 6.55749998986721
+    },
+    {
+      "crop": "face_0012.png",
+      "sampled_frame": 13,
+      "capture_seconds": 2.4305769000202417,
+      "box_xyxy": [
+        266.51947021484375,
+        143.93179321289062,
+        462.29656982421875,
+        386.216552734375
+      ],
+      "detection_confidence": 0.835318922996521,
+      "cosine": 0.84403395652771,
+      "match": true,
+      "embedding_compare_ms": 6.5055000013671815
+    },
+    {
+      "crop": "face_0013.png",
+      "sampled_frame": 14,
+      "capture_seconds": 2.6197513000224717,
+      "box_xyxy": [
+        266.65911865234375,
+        145.16294860839844,
+        464.27239990234375,
+        386.9295959472656
+      ],
+      "detection_confidence": 0.8299319744110107,
+      "cosine": 0.8629050254821777,
+      "match": true,
+      "embedding_compare_ms": 6.529300007969141
+    },
+    {
+      "crop": "face_0014.png",
+      "sampled_frame": 15,
+      "capture_seconds": 2.8297231000033207,
+      "box_xyxy": [
+        268.097412109375,
+        146.76109313964844,
+        466.78570556640625,
+        387.7952880859375
+      ],
+      "detection_confidence": 0.8274322748184204,
+      "cosine": 0.8819507956504822,
+      "match": true,
+      "embedding_compare_ms": 8.552499988581985
+    }
+  ],
+  "note": "Per-crop matches only; no tracking, alignment or session-level identity decision. Reference must use the same model and preprocessing."
+}

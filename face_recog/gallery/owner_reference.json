@@ -1,0 +1,13 @@
+{
+  "source": "/mnt/c/Users/sujin_cyjip4t/OneDrive - The Chinese University of Hong Kong/\u684c\u9762/c2e94365df361a58e109cc402f36cef8.jpg",
+  "box_xyxy": [
+    74.09243774414062,
+    83.1578369140625,
+    228.02882385253906,
+    282.3865661621094
+  ],
+  "margin": 0.2,
+  "detection_confidence": 0.8728741407394409,
+  "model": "models/insightface/w600k_mbf.onnx",
+  "preprocessing": "RGB (pixel-127.5)/128, resize112, L2; no alignment"
+}
