@@ -1,0 +1,56 @@
+yolo_rk3576_deploy/
+├── benchmark_yolo_face
+│   ├── benchmark_fp16
+│   │   ├── benchmark_fddb_rknn.py
+│   │   ├── detections.csv
+│   │   ├── per_image.csv
+│   │   └── summary.json
+│   ├── benchmark_int8_split
+│   │   ├── benchmark_fddb_rknn_split.py
+│   │   └── results_board
+│   │       ├── detections.csv
+│   │       ├── per_image.csv
+│   │       └── summary.json
+│   └── yolo_mbf_integrate
+│       ├── SUMMARY.md
+│       ├── archive_manifest.json
+│       ├── board_results
+│       │   ├── face_cpp_smoke_fixed
+│       │   │   └── results.json
+│       │   ├── face_recog_run2
+│       │   │   └── results.json
+│       │   ├── face_recog_run4
+│       │   │   └── results.json
+│       │   └── face_recog_run5
+│       │       └── results.json
+│       ├── related_tree.txt
+│       └── run_summary.csv
+├── cpp_deploy
+│   ├── CMakeLists.txt
+│   ├── camera_yolo11_face_int8.cpp
+│   └── face_recognition.cpp
+├── face_recog
+│   ├── embedding_reference
+│   │   └── owner.npy
+│   └── gallery
+│       └── owner.npy
+├── models
+│   ├── insightface
+│   │   └── w600k_mbf.onnx
+│   └── yolov11n
+│       ├── rknn
+│       │   └── yolo11n_face_split_int8.rknn
+│       └── yolo_face
+│           └── yolo11n_face_split.onnx
+└── scripts
+    ├── InsightPTQ
+    │   ├── output_fp16
+    │   │   └── w600k_mbf_rk3576_fp16.rknn
+    │   └── rknn_mbf_convert.py
+    ├── YOLO11_face_PTQ
+    │   └── rknn_yolo11_ptq.py
+    └── face_recog_pipline
+        └── Yolo_insightface_integration
+            ├── enroll.py
+            ├── probe_camera.py
+            └── webcam_yolo_mbf.py

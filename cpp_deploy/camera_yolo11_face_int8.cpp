@@ -13,7 +13,7 @@
 #include "rknn_api.h"
 
 // ================= 配置区 =================
-const char* MODEL_PATH = "/home/industio/yolo_test/yolo11n_face_int8.rknn";
+const char* MODEL_PATH = "/home/industio/yolo_test/yolo11n_face_split_int8.rknn";
 const char* CAMERA_DEV = "/dev/video42";
 const int CAM_WIDTH = 1920;
 const int CAM_HEIGHT = 1080;
@@ -197,7 +197,57 @@ int main() {
     free(model_data);
     if (ret < 0) return -1;
 
-    rknn_set_core_mask(ctx, RKNN_NPU_CORE_0_1);
+    ret = rknn_set_core_mask(ctx, RKNN_NPU_CORE_0_1);
+    if (ret < 0) {
+        std::cerr << "rknn_set_core_mask failed: " << ret << std::endl;
+        rknn_destroy(ctx);
+        return -1;
+    }
+
+    // Split outputs: identify boxes/scores by shape, not output order.
+    rknn_input_output_num io_num = {};
+    ret = rknn_query(ctx, RKNN_QUERY_IN_OUT_NUM, &io_num, sizeof(io_num));
+    if (ret < 0 || io_num.n_input != 1 || io_num.n_output != 2) {
+        std::cerr << "Expected one input and two split outputs" << std::endl;
+        rknn_destroy(ctx);
+        return -1;
+    }
+    const int num_anchors = 8400;
+    int boxes_index = -1;
+    int scores_index = -1;
+    bool boxes_channel_first = true;
+    for (unsigned int i = 0; i < io_num.n_output; ++i) {
+        rknn_tensor_attr attr = {};
+        attr.index = i;
+        ret = rknn_query(ctx, RKNN_QUERY_OUTPUT_ATTR, &attr, sizeof(attr));
+        if (ret < 0) {
+            std::cerr << "Output attribute query failed: " << ret << std::endl;
+            rknn_destroy(ctx);
+            return -1;
+        }
+        std::cout << "Output " << i << " (" << attr.name << "):";
+        for (unsigned int d = 0; d < attr.n_dims; ++d) {
+            std::cout << " " << attr.dims[d];
+        }
+        std::cout << "; scale=" << attr.scale << "; zp=" << attr.zp
+                  << std::endl;
+        if (attr.n_dims != 3 || attr.dims[0] != 1) continue;
+        if (attr.n_elems == 4 * num_anchors &&
+            ((attr.dims[1] == 4 && attr.dims[2] == num_anchors) ||
+             (attr.dims[1] == num_anchors && attr.dims[2] == 4))) {
+            boxes_index = i;
+            boxes_channel_first = attr.dims[1] == 4;
+        } else if (attr.n_elems == num_anchors &&
+                   ((attr.dims[1] == 1 && attr.dims[2] == num_anchors) ||
+                    (attr.dims[1] == num_anchors && attr.dims[2] == 1))) {
+            scores_index = i;
+        }
+    }
+    if (boxes_index < 0 || scores_index < 0) {
+        std::cerr << "Unsupported split output shapes" << std::endl;
+        rknn_destroy(ctx);
+        return -1;
+    }
 
     // 3. 准备缓冲区结构
     cv::Mat frame, rgb_frame, input_img;
@@ -208,12 +258,12 @@ int main() {
     inputs[0].size = MODEL_INPUT_W * MODEL_INPUT_H * 3;
     inputs[0].fmt = RKNN_TENSOR_NHWC;
 
-    rknn_output outputs[1];
+    rknn_output outputs[2];
     memset(outputs, 0, sizeof(outputs));
-    outputs[0].want_float = 1;
-
-    const int num_anchors = 8400;
-    const int num_classes = 1;
+    for (unsigned int i = 0; i < 2; ++i) {
+        outputs[i].index = i;
+        outputs[i].want_float = 1;
+    }
 
     const std::string window_name = "Purple Pi OH2 - YOLOv11 Live";
     cv::namedWindow(window_name, cv::WINDOW_NORMAL);
@@ -224,6 +274,7 @@ int main() {
     int frame_count = 0;
     double fps_display = 0.0;
 
+    bool inference_failed = false;
     while (true) {
         auto t0 = std::chrono::steady_clock::now();
 
@@ -243,37 +294,60 @@ int main() {
         inputs[0].buf = input_img.data;
 
         // NPU 推理
-        rknn_inputs_set(ctx, 1, inputs);
-        rknn_run(ctx, NULL);
-        rknn_outputs_get(ctx, 1, outputs, NULL);
+        ret = rknn_inputs_set(ctx, 1, inputs);
+        if (ret == RKNN_SUCC) ret = rknn_run(ctx, NULL);
+        if (ret == RKNN_SUCC) ret = rknn_outputs_get(ctx, 2, outputs, NULL);
+        if (ret != RKNN_SUCC) {
+            std::cerr << "RKNN inference/output retrieval failed: " << ret
+                      << std::endl;
+            inference_failed = true;
+            break;
+        }
+        if (!outputs[boxes_index].buf || !outputs[scores_index].buf ||
+            outputs[boxes_index].size < 4 * num_anchors * sizeof(float) ||
+            outputs[scores_index].size < num_anchors * sizeof(float)) {
+            std::cerr << "Invalid split output buffers" << std::endl;
+            rknn_outputs_release(ctx, 2, outputs);
+            inference_failed = true;
+            break;
+        }
 
         // 解析输出
-        float* out_data = (float*)outputs[0].buf;
+        const float* box_data = (const float*)outputs[boxes_index].buf;
+        const float* score_data = (const float*)outputs[scores_index].buf;
         std::vector<cv::Rect> boxes;
         std::vector<float> confidences;
         std::vector<int> class_ids;
 
         for (int i = 0; i < num_anchors; ++i) {
-            float max_score = 0.0f;
-            int max_cls_id = -1;
-            for (int c = 0; c < num_classes; ++c) {
-                float score = out_data[(4 + c) * num_anchors + i];
-                if (score > max_score) {
-                    max_score = score;
-                    max_cls_id = c;
-                }
-            }
+            // Scores are already probabilities; do not apply sigmoid again.
+            float max_score = score_data[i];
+            int max_cls_id = 0;
 
             if (max_score >= CONF_THRESHOLD) {
-                float cx = out_data[0 * num_anchors + i];
-                float cy = out_data[1 * num_anchors + i];
-                float w  = out_data[2 * num_anchors + i];
-                float h  = out_data[3 * num_anchors + i];
+                auto coordinate = [&](int c) {
+                    return box_data[boxes_channel_first ? c * num_anchors + i
+                                                       : i * 4 + c];
+                };
+                float cx = coordinate(0);
+                float cy = coordinate(1);
+                float w = coordinate(2);
+                float h = coordinate(3);
+                if (!std::isfinite(max_score) || !std::isfinite(cx) ||
+                    !std::isfinite(cy) || !std::isfinite(w) ||
+                    !std::isfinite(h) || w <= 0 || h <= 0) continue;
 
-                int left   = std::max(0, (int)((cx - 0.5f * w) * scale_x));
-                int top    = std::max(0, (int)((cy - 0.5f * h) * scale_y));
-                int width  = std::min(orig_w - left, (int)(w * scale_x));
-                int height = std::min(orig_h - top,  (int)(h * scale_y));
+                int left = (int)std::clamp((cx - 0.5f * w) * scale_x,
+                                           0.0f, (float)orig_w);
+                int top = (int)std::clamp((cy - 0.5f * h) * scale_y,
+                                          0.0f, (float)orig_h);
+                int right = (int)std::clamp((cx + 0.5f * w) * scale_x,
+                                            0.0f, (float)orig_w);
+                int bottom = (int)std::clamp((cy + 0.5f * h) * scale_y,
+                                             0.0f, (float)orig_h);
+                int width = right - left;
+                int height = bottom - top;
+                if (width <= 0 || height <= 0) continue;
 
                 boxes.push_back(cv::Rect(left, top, width, height));
                 confidences.push_back(max_score);
@@ -295,7 +369,12 @@ int main() {
                         cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(0, 0, 255), 2);
         }
 
-        rknn_outputs_release(ctx, 1, outputs);
+        ret = rknn_outputs_release(ctx, 2, outputs);
+        if (ret != RKNN_SUCC) {
+            std::cerr << "Output release failed: " << ret << std::endl;
+            inference_failed = true;
+            break;
+        }
 
         auto t1 = std::chrono::steady_clock::now();
         double frame_ms = std::chrono::duration<double, std::milli>(t1 - t0).count();
@@ -317,5 +396,5 @@ int main() {
     cv::destroyAllWindows();
     rknn_destroy(ctx);
     camera.release();
-    return 0;
+    return inference_failed ? -1 : 0;
 }

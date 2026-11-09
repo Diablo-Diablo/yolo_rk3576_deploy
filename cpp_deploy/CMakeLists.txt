@@ -12,12 +12,14 @@ add_executable(yolo11_demo main.cpp)
 add_executable(camera_yolo11 camera_yolo11.cpp)
 add_executable(camera_yolo11_face_fp16 camera_yolo11_face_fp16.cpp)
 add_executable(camera_yolo11_face_int8 camera_yolo11_face_int8.cpp)
+add_executable(face_recognition face_recognition.cpp)
 
 foreach(target IN ITEMS
     yolo11_demo
     camera_yolo11
     camera_yolo11_face_fp16
     camera_yolo11_face_int8
+    face_recognition
 )
     target_include_directories(${target} PRIVATE
         /usr/include

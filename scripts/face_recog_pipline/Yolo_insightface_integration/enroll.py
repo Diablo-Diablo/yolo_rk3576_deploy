@@ -8,7 +8,7 @@ Workflow
 2. Release the camera.
 3. Run MBF on every cached crop, collect the 512-d unit vectors.
 4. Average them, re-normalise, and overwrite
-   ``D:/yolo_rk3576_deploy/face_recog/gallery/owner.npy``.
+   ``D:/yolo_rk3576_deploy/face_recog/embedding_reference/owner.npy``.
 
 A preview image and a per-crop embedding dump are saved alongside the
 gallery file so the enrolment can be audited.
@@ -33,7 +33,7 @@ import onnxruntime as ort
 
 # Project root: scripts/face_recog_pipline/Yolo_insightface_integration/ -> root
 ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_GALLERY = ROOT / "face_recog" / "gallery" / "owner.npy"
+DEFAULT_GALLERY = ROOT / "face_recog" / "embedding_reference" / "owner.npy"
 DEFAULT_YOLO    = ROOT / "models/yolov11n/yolo_face/yolo11n_face_split.onnx"
 DEFAULT_MBF     = ROOT / "models/insightface/w600k_mbf.onnx"
 
@@ -158,7 +158,7 @@ def main() -> None:
     # Output
     parser.add_argument(
         "--output", type=Path, default=DEFAULT_GALLERY,
-        help="Destination .npy file (default: face_recog/gallery/owner.npy)"
+        help="Destination .npy file (default: face_recog/embedding_reference/owner.npy)"
     )
     parser.add_argument(
         "--min-crops", type=int, default=5,
@@ -166,6 +166,7 @@ def main() -> None:
     )
 
     args = parser.parse_args()
+    args.output.parent.mkdir(parents=True, exist_ok=True)
 
     # --- Validate args -------------------------------------------------------
     for path in (args.yolo, args.mbf):

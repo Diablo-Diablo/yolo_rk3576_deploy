@@ -1,0 +1,46 @@
+{
+    "reference": "/home/industio/yolo_test/embedding_reference/owner.npy",
+    "threshold": 0.0,
+    "target_frames": 1,
+    "sampled_frames": 1,
+    "skipped_sample_slots": 0,
+    "cached_faces": 2,
+    "capture_seconds": 4.2013797999999998e-02,
+    "model_load_ms": 7.3862683000000004e+01,
+    "note": "Per-crop matches only; no tracking, alignment, liveness or session-level identity decision.",
+    "timing_note": "Recognition phase includes crop file writes; excludes model loads and final report/NPY writes.",
+    "results": [
+        {
+            "crop": "face_0000.png",
+            "sampled_frame": 1,
+            "capture_seconds": 0.0,
+            "box_xyxy": [
+                2.4338957214355469e+02,
+                4.8025253295898438e+01,
+                3.1489385986328125e+02,
+                1.5146427917480469e+02
+            ],
+            "detection_confidence": 8.4772479534149170e-01,
+            "cosine": 8.5815380225696541e-02,
+            "match": 1,
+            "embedding_compare_ms": 6.5758789999999996e+00
+        },
+        {
+            "crop": "face_0001.png",
+            "sampled_frame": 1,
+            "capture_seconds": 0.0,
+            "box_xyxy": [
+                8.3880020141601562e+01,
+                9.8821205139160156e+01,
+                1.5813444519042969e+02,
+                2.2627288818359375e+02
+            ],
+            "detection_confidence": 8.3347731828689575e-01,
+            "cosine": 2.0860525271059310e-01,
+            "match": 1,
+            "embedding_compare_ms": 5.6204799999999997e+00
+        }
+    ],
+    "recognition_phase_ms": 1.5681611000000000e+01,
+    "recognition_performed": 1
+}

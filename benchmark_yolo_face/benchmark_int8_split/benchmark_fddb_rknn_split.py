@@ -135,7 +135,7 @@ def main() -> None:
     """Run board inference and save timings, detections and metrics."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--model', type=Path, default=Path(
-        '/home/industio/yolo_test/yolo11n_face_split_rk3576_int8.rknn'))
+        '/home/industio/yolo_test/yolo11n_face_split_int8.rknn'))
     parser.add_argument('--dataset', type=Path, default=Path(
         '/home/industio/yolo_test/fddb_yolo'))
     parser.add_argument('--split', default='val')
@@ -165,6 +165,12 @@ def main() -> None:
         paths = paths[:args.max_images]
     if not paths:
         raise ValueError('No benchmark images')
+    # Fail before NPU initialization if a required label is absent.
+    for path in paths:
+        label = (args.dataset / 'labels' / args.split
+                 / path.relative_to(image_dir).with_suffix('.txt'))
+        if not label.is_file():
+            raise FileNotFoundError(f'Missing label: {label}')
     runtime = RKNNLite(verbose=False)
     records, timing_rows, detection_rows = [], [], []
     try:
@@ -233,11 +239,35 @@ def main() -> None:
         preprocessing='direct resize, RGB uint8, no host normalization',
         confidence_threshold=args.conf, nms_iou=args.nms_iou,
         warmup=args.warmup, metrics_iou50=metrics['0.50'],
+        ground_truth_boxes=sum(len(gt) for gt, _, _ in records),
+        TP=metrics['0.50']['TP'], FP=metrics['0.50']['FP'],
+        FN=metrics['0.50']['FN'], precision=metrics['0.50']['precision'],
+        recall=metrics['0.50']['recall'], mAP50=metrics['0.50']['AP'],
+        mAP50_90=(float(np.mean([
+            metrics[f'{v / 100:.2f}']['AP'] for v in range(50, 91, 5)
+        ])) if aps else None),
+        detections_total=sum(len(boxes) for _, boxes, _ in records),
+        confidence_mean=float(np.mean([
+            float(scores.mean()) if len(scores) else 0.0
+            for _, _, scores in records
+        ])),
+        inference_ms_mean=float(np.mean([
+            row['inference_ms'] for row in timing_rows
+        ])),
+        inference_ms_median=float(np.median([
+            row['inference_ms'] for row in timing_rows
+        ])),
+        inference_ms_p95=float(np.percentile([
+            row['inference_ms'] for row in timing_rows
+        ], 95)),
         AP_by_IoU=metrics, mAP50_95=float(np.mean(aps)) if aps else None,
         metric_note='All-points AP after confidence cutoff; not official FDDB',
         timing_note='RKNN inference API includes input/output handling; '
                     'pipeline excludes labels, warmup and metric calculation',
         all_scores_zero=all(row['raw_score_max'] == 0 for row in timing_rows))
+    print('AP uses float boxes and unmatched-GT matching; the FP16 script '
+          'uses integer NMS boxes and a different P/R matching rule. '
+          'Use identical dataset/thresholds; small differences may remain.')
     for key in ('preprocess_ms', 'inference_ms', 'postprocess_ms',
                 'pipeline_ms'):
         values = [r[key] for r in timing_rows]

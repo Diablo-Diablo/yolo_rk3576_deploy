@@ -1,0 +1,368 @@
+[
+  {
+    "source": "D:\\board_setup\\face_cpp_smoke_fixed\\embeddings.npy",
+    "archived": "board_results/face_cpp_smoke_fixed/embeddings.npy",
+    "bytes": 4224,
+    "sha256": "2201e7e076e2f0636a15a5acc943f30ffa0ebd77dbf4d3f2d175ece1bf165bcf"
+  },
+  {
+    "source": "D:\\board_setup\\face_cpp_smoke_fixed\\face_0000.png",
+    "archived": "board_results/face_cpp_smoke_fixed/face_0000.png",
+    "bytes": 22922,
+    "sha256": "bce76314b7126395844edd7e87a432f8cdb25eeb0ba1c5ccf823ca24a710fed0"
+  },
+  {
+    "source": "D:\\board_setup\\face_cpp_smoke_fixed\\face_0001.png",
+    "archived": "board_results/face_cpp_smoke_fixed/face_0001.png",
+    "bytes": 38774,
+    "sha256": "70264aca39b71a38db668e67130704424f673ccb307ad51fc68f13c769b6b9a8"
+  },
+  {
+    "source": "D:\\board_setup\\face_cpp_smoke_fixed\\preview.jpg",
+    "archived": "board_results/face_cpp_smoke_fixed/preview.jpg",
+    "bytes": 39260,
+    "sha256": "0f0f9bec6456a48f62a3aa59ab3c2bdff466d271618383950090ab02787633e4"
+  },
+  {
+    "source": "D:\\board_setup\\face_cpp_smoke_fixed\\results.json",
+    "archived": "board_results/face_cpp_smoke_fixed/results.json",
+    "bytes": 1656,
+    "sha256": "68e8443574cc6006f454695e71137fc66bc56f742aac51ae63a1d70a767cb1d7"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\embeddings.npy",
+    "archived": "board_results/face_recog_run2/embeddings.npy",
+    "bytes": 30848,
+    "sha256": "30caa13f6b253ac7184b5488809d7c15f72749bfd91d2b060a133037173d3e48"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0000.png",
+    "archived": "board_results/face_recog_run2/face_0000.png",
+    "bytes": 229757,
+    "sha256": "247c581b264cecb8ce7c1c1873aa59e287c8108a07248208937305cade308d41"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0001.png",
+    "archived": "board_results/face_recog_run2/face_0001.png",
+    "bytes": 212352,
+    "sha256": "65184402397fabce3d9f18e876a8995ba3fd1770da3bd39efdad231e6c483e65"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0002.png",
+    "archived": "board_results/face_recog_run2/face_0002.png",
+    "bytes": 227787,
+    "sha256": "a2c6a5bd4ebbea09138acae75c62d793530eb34a5364c9398b9400d1534eada7"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0003.png",
+    "archived": "board_results/face_recog_run2/face_0003.png",
+    "bytes": 215929,
+    "sha256": "aac93fa080a31a8daac599e033c86500f299c6b2c083deaefaf16a9bf6eccd6b"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0004.png",
+    "archived": "board_results/face_recog_run2/face_0004.png",
+    "bytes": 218079,
+    "sha256": "c0f019fbf564eba37e6e73e3160c5afb19ed61156bf2e1f38a8ec4b9f465ee0f"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0005.png",
+    "archived": "board_results/face_recog_run2/face_0005.png",
+    "bytes": 212853,
+    "sha256": "20c99706fd58bd8c043ffbf2362e8d52406a86b82f93ba6bcb3818499d5893cc"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0006.png",
+    "archived": "board_results/face_recog_run2/face_0006.png",
+    "bytes": 214764,
+    "sha256": "69796cec90a52cc991735fb629e04baeee1c31d6fad955bf0527f5e69fde55c0"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0007.png",
+    "archived": "board_results/face_recog_run2/face_0007.png",
+    "bytes": 240780,
+    "sha256": "d3dd9001a23faea2765a0bb59e90ec0524200deb50beb7a339ef040ef29d9c47"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0008.png",
+    "archived": "board_results/face_recog_run2/face_0008.png",
+    "bytes": 195560,
+    "sha256": "b30f744bf683e091a1f58c77cabf158d6b01099c0e73d227deaeb5cdf34390c1"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0009.png",
+    "archived": "board_results/face_recog_run2/face_0009.png",
+    "bytes": 231415,
+    "sha256": "5b3ea1121dd4296dbad36821bcb1fdfe8738f609a11d09818d96f889bb580f76"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0010.png",
+    "archived": "board_results/face_recog_run2/face_0010.png",
+    "bytes": 202884,
+    "sha256": "019b418294e4479a4631ca6a922a9912a8424937ad186b9dc43f74306d6cfdb0"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0011.png",
+    "archived": "board_results/face_recog_run2/face_0011.png",
+    "bytes": 644608,
+    "sha256": "25cae4c2565a80b23c0dccf5f406267f39716e626225f4c6f2378e0161b26a12"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0012.png",
+    "archived": "board_results/face_recog_run2/face_0012.png",
+    "bytes": 243965,
+    "sha256": "6640444600cd5e72008fe621894a0e9cadb08c1dfc69f12e2310cfaab552d7b8"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0013.png",
+    "archived": "board_results/face_recog_run2/face_0013.png",
+    "bytes": 528475,
+    "sha256": "043c0dfd16aa7d3cc9c010d25453c5988fc56da69f1be6001fe577d9a9228f93"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\face_0014.png",
+    "archived": "board_results/face_recog_run2/face_0014.png",
+    "bytes": 197065,
+    "sha256": "af8ec04e217f913b6f43dde8fb8ef073c48b5e0320d783723e4ee0b60fe4c246"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\preview.jpg",
+    "archived": "board_results/face_recog_run2/preview.jpg",
+    "bytes": 489953,
+    "sha256": "b70a499a84f0ace91f89fa3800dcd10c6d0bb02d2750310e2e2b1dffcde3c291"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run2\\results.json",
+    "archived": "board_results/face_recog_run2/results.json",
+    "bytes": 8646,
+    "sha256": "983c9d20d5257defaeffa8749844323a13e655ed61e843c4daa567bcda6974af"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\embeddings.npy",
+    "archived": "board_results/face_recog_run4/embeddings.npy",
+    "bytes": 34944,
+    "sha256": "27d2f08482dd4006d4313163f49a45cfbe359c7b21bdd85b405fa1d76552d8f0"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0000.png",
+    "archived": "board_results/face_recog_run4/face_0000.png",
+    "bytes": 225428,
+    "sha256": "36ea32b2955f773359cd85f3c43e2f7569e5e9f6591d19ac5e6d6651d4e7faa4"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0001.png",
+    "archived": "board_results/face_recog_run4/face_0001.png",
+    "bytes": 264948,
+    "sha256": "46c157d5ecad9504c8c22c1bcde1b48ea8f9bcf93a2732ae79a70b4364e78950"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0002.png",
+    "archived": "board_results/face_recog_run4/face_0002.png",
+    "bytes": 213632,
+    "sha256": "9ef859fa04ae5b7849e746e7f3452964cf8f3f4cd15c463b6ea3716c74013c07"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0003.png",
+    "archived": "board_results/face_recog_run4/face_0003.png",
+    "bytes": 255646,
+    "sha256": "4a005fc8373e9e3cb363464b4e9fd57a4fe2919ecdb7da60142e8c481e7208db"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0004.png",
+    "archived": "board_results/face_recog_run4/face_0004.png",
+    "bytes": 243796,
+    "sha256": "f17d686e00b4d2b0ea37ba50d063047f0bfd15f5391d76a6e322383f7c9925db"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0005.png",
+    "archived": "board_results/face_recog_run4/face_0005.png",
+    "bytes": 216514,
+    "sha256": "952b876467a0c8e3eb75368a40436aeed5a73ac10bc684ba91b6b68812363ba7"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0006.png",
+    "archived": "board_results/face_recog_run4/face_0006.png",
+    "bytes": 211060,
+    "sha256": "f934b91b980906e0425aa71c97b8fbb872cb9f7f571da8047b3e44c2ff01a7d4"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0007.png",
+    "archived": "board_results/face_recog_run4/face_0007.png",
+    "bytes": 250406,
+    "sha256": "ccbbbc102b585947681bde18e80f72ed29f9f772a7e156f3d4e2f2b8bb495a90"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0008.png",
+    "archived": "board_results/face_recog_run4/face_0008.png",
+    "bytes": 262822,
+    "sha256": "0ea5273a504b333d63d5d4e74cc9e69d9b5beace8f19712337c6e3b10972a0f4"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0009.png",
+    "archived": "board_results/face_recog_run4/face_0009.png",
+    "bytes": 250028,
+    "sha256": "d8a1398e7794e7e1edb9a634a33bf47f301aeabe21455002d7d65ee5e247fe49"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0010.png",
+    "archived": "board_results/face_recog_run4/face_0010.png",
+    "bytes": 264456,
+    "sha256": "6e937032b3ac26fa127e7f60be174b5a6cbc2b2d98f892191ac2fcfad0f0d7a3"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0011.png",
+    "archived": "board_results/face_recog_run4/face_0011.png",
+    "bytes": 532972,
+    "sha256": "c940d14cb419a73bd6c8650c71a62e5e9388d056475f8f7af8148da6b9c34d39"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0012.png",
+    "archived": "board_results/face_recog_run4/face_0012.png",
+    "bytes": 271838,
+    "sha256": "64d1cd81c0154185f6a27816aed2499be190e96db6ccab50a48ec7ca269f2f03"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0013.png",
+    "archived": "board_results/face_recog_run4/face_0013.png",
+    "bytes": 531942,
+    "sha256": "a5da1f002e210abb482fa2c4e68cab88a7a7c8da7fd2e317e177760b7d6a6476"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0014.png",
+    "archived": "board_results/face_recog_run4/face_0014.png",
+    "bytes": 260625,
+    "sha256": "09e3a9714b91aeb6479b299ef9f6ba3f58af35ad501e74d3da6879735a9dffcc"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0015.png",
+    "archived": "board_results/face_recog_run4/face_0015.png",
+    "bytes": 221464,
+    "sha256": "5be4285f17c27ca1b92f53c2382aaf12073e7519e3f2a4c76dd67528758941f1"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\face_0016.png",
+    "archived": "board_results/face_recog_run4/face_0016.png",
+    "bytes": 250129,
+    "sha256": "dc5b07cf650a2513bfaac1c88f8095dc06e9621424cf3627c8f323c71915ba39"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\preview.jpg",
+    "archived": "board_results/face_recog_run4/preview.jpg",
+    "bytes": 394406,
+    "sha256": "b33439067a5fcd3aa54a0c7e3debb2a25d2796b6648efafa310b53b10f7e0f0d"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run4\\results.json",
+    "archived": "board_results/face_recog_run4/results.json",
+    "bytes": 9696,
+    "sha256": "d23e4eefb375e1f8aa6dd9cbaa6919482186f039ad260e951c50df5d0a4e6092"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\embeddings.npy",
+    "archived": "board_results/face_recog_run5/embeddings.npy",
+    "bytes": 30848,
+    "sha256": "bed760134b468e3b8306834d84aadc6c46df59a3bdc801a1d2d3479e4ac84630"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0000.png",
+    "archived": "board_results/face_recog_run5/face_0000.png",
+    "bytes": 266549,
+    "sha256": "ab41cd2d3d7509b2f32b9392fe3a74d7dee4f9032f46143c63e3ee7aac1a1ec0"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0001.png",
+    "archived": "board_results/face_recog_run5/face_0001.png",
+    "bytes": 292487,
+    "sha256": "1972d4020603599acd1844bcb0f802270709febc0fd3f43a50f8e3a0574c263d"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0002.png",
+    "archived": "board_results/face_recog_run5/face_0002.png",
+    "bytes": 294792,
+    "sha256": "1f8ff48b41b154322bfab5553130f0c35235b9a2c6c41d961847cff72eca58c4"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0003.png",
+    "archived": "board_results/face_recog_run5/face_0003.png",
+    "bytes": 302536,
+    "sha256": "54da996d5be21dbbcc79dd1648ea9f10ed8f8f3a32a14e4ca5b905aaef4e516e"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0004.png",
+    "archived": "board_results/face_recog_run5/face_0004.png",
+    "bytes": 307798,
+    "sha256": "63a3a47e279b9cc4fec940b7a1fe5a9cf23d051d7b1c564c3c3bbe61610bd18c"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0005.png",
+    "archived": "board_results/face_recog_run5/face_0005.png",
+    "bytes": 302296,
+    "sha256": "df5fce1e350abc186623110c284902224aa307abfef1187f0a39cbdd23259ab8"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0006.png",
+    "archived": "board_results/face_recog_run5/face_0006.png",
+    "bytes": 300166,
+    "sha256": "806a3b3aff336dda007f5757c52b951240acd1e2fcc4093b379148c17fc21c21"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0007.png",
+    "archived": "board_results/face_recog_run5/face_0007.png",
+    "bytes": 287230,
+    "sha256": "6ef0a2204a6922681bb5293ff3fc9cb0fa522812b0b493529dbb22271f3246b6"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0008.png",
+    "archived": "board_results/face_recog_run5/face_0008.png",
+    "bytes": 286620,
+    "sha256": "27ab523a666bd4421aeeb835c7299bcef1f14292bb81d9a9b8f407bc26bc2525"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0009.png",
+    "archived": "board_results/face_recog_run5/face_0009.png",
+    "bytes": 295343,
+    "sha256": "f737841b9c79ecf3ad6985e1223e7a7435b99ca46b1f2bd4900adee2ee31068b"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0010.png",
+    "archived": "board_results/face_recog_run5/face_0010.png",
+    "bytes": 299466,
+    "sha256": "8ba9b90be4e1bcad2549e5b840d879a55f7da2c0f400bc07a9ab6ce8b26fdf74"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0011.png",
+    "archived": "board_results/face_recog_run5/face_0011.png",
+    "bytes": 254840,
+    "sha256": "b13a8fd20fc70a8c07e25d66a2761163accf6ebb3f6cc2a188ddd10c8c8ff542"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0012.png",
+    "archived": "board_results/face_recog_run5/face_0012.png",
+    "bytes": 320952,
+    "sha256": "8f488dcf91de29e2a99c098c9300d3ec0f25089f0c905c556b99afcef8d8cad1"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0013.png",
+    "archived": "board_results/face_recog_run5/face_0013.png",
+    "bytes": 310939,
+    "sha256": "a6e22ddb064735b0801fc885228b632efd63bc9731f2cfd724a327227c7749a8"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\face_0014.png",
+    "archived": "board_results/face_recog_run5/face_0014.png",
+    "bytes": 374798,
+    "sha256": "3432e2fe1b3bc157d7fd1f84131942ee49325387d2d9f14ebeed54e153c8e474"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\preview.jpg",
+    "archived": "board_results/face_recog_run5/preview.jpg",
+    "bytes": 372510,
+    "sha256": "543d7e0dcfac99f4eaeee0093ef66819b4d6eac4fc4143793c2a6d2c2ff1dc03"
+  },
+  {
+    "source": "D:\\board_setup\\face_recog_run5\\results.json",
+    "archived": "board_results/face_recog_run5/results.json",
+    "bytes": 8665,
+    "sha256": "55be4ef51c5e71fdd936def6045618abf0f21059d49558bb5bb852911b8e9d4e"
+  }
+]

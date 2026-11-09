@@ -98,7 +98,8 @@ def main() -> None:
         ROOT / 'models/yolov11n/yolo_face/yolo11n_face_split.onnx'))
     parser.add_argument('--mbf', type=Path, default=(
         ROOT / 'models/insightface/w600k_mbf.onnx'))
-    parser.add_argument('--reference', type=Path, required=True,
+    parser.add_argument('--reference', type=Path, default=(
+        ROOT / 'face_recog/embedding_reference/owner.npy'),
                         help='One-person .npy embedding: (512,) or (1,512)')
     parser.add_argument('--threshold', type=float, required=True,
                         help='User-calibrated cosine decision threshold')
